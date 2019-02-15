@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+<h2 class="text-center">
+  Todo App
+</h2>
+<div class="col-md-8 offset-md-2">
+  <div>
+    <input class="form-control" type="text" [formControl]="userInput" (change)="onChange()">
+  </div>
+
+  <ul>
+    <li (click)="toggleTodo(i)"
+        [class.complete]="todo.complete"
+        *ngFor="let todo of todos; index as i">
+      {{todo.content}}
+    </li>
+  </ul>
+</div>
